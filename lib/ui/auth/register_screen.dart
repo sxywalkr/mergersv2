@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       key: _scaffoldKey,
       body: Stack(
         children: <Widget>[
-          _buildBackground(),
+          // _buildBackground(),
           Align(
             alignment: Alignment.center,
             child: _buildForm(context),

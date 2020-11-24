@@ -561,9 +561,19 @@ class MergrPenyediaScreen extends StatelessWidget {
   void genDocxKualifikasiV2(BuildContext context, String q1) async {
     final docPath = await _localDocPath;
 
+   var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text('Dokumen sedang di proses...'),
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Loading database...'),
+      duration: Duration(seconds: 1),
     ));
 
     ////////// ********** start data
@@ -634,6 +644,16 @@ class MergrPenyediaScreen extends StatelessWidget {
     // }
 
     File file = File('$docPath' + 'Pictures/mDocKualifikasi_v1.docx');
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Opening template...'),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Merging...'),
+      duration: Duration(seconds: 1),
+    ));
 
     // File file = File(result.files.single.path);
     // print(result.files.single.path);
@@ -837,10 +857,10 @@ class MergrPenyediaScreen extends StatelessWidget {
 
       final of = new File('$docPath' +
           'Pictures/generated Mergr Kualifikasi ${data1['aNamaBadanUsaha']}.docx');
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        await Permission.storage.request();
-      }
+      // var status = await Permission.storage.status;
+      // if (!status.isGranted) {
+      //   await Permission.storage.request();
+      // }
       await of.writeAsBytes(d);
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content: Text(
@@ -855,9 +875,19 @@ class MergrPenyediaScreen extends StatelessWidget {
   void genDocxPeralatanV2(BuildContext context, String q1) async {
     final docPath = await _localDocPath;
 
+    var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text('Dokumen sedang di proses...'),
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Loading database...'),
+      duration: Duration(seconds: 1),
     ));
 
     // **** data1
@@ -905,6 +935,16 @@ class MergrPenyediaScreen extends StatelessWidget {
     // print(file.absolute);
 
     File file = File('$docPath' + 'Pictures/mDocPeralatan_v1.docx');
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Opening template...'),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Merging...'),
+      duration: Duration(seconds: 1),
+    ));
 
     final docx = await DocxTemplate.fromBytes(await file.readAsBytes());
     try {
@@ -954,10 +994,10 @@ class MergrPenyediaScreen extends StatelessWidget {
       // final String filePath = '$dirPath';
       final of = new File('$docPath' +
           'Pictures/generated Mergr Peralatan ${data1['aNamaBadanUsaha']}.docx');
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        await Permission.storage.request();
-      }
+      // var status = await Permission.storage.status;
+      // if (!status.isGranted) {
+      //   await Permission.storage.request();
+      // }
       await of.writeAsBytes(d);
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content:
@@ -972,10 +1012,21 @@ class MergrPenyediaScreen extends StatelessWidget {
   void genDocxPernyataanV2(BuildContext context, String q1) async {
     final docPath = await _localDocPath;
 
+    var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text('Dokumen sedang di proses...'),
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
     ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Loading database...'),
+      duration: Duration(seconds: 1),
+    ));
+
 
     // **** data1
     Map<String, dynamic> data1 = {};
@@ -1023,6 +1074,18 @@ class MergrPenyediaScreen extends StatelessWidget {
     // File file = File(result.files.single.path);
     // print(file.absolute);
     File file = File('$docPath' + 'Pictures/mDocPernyataan_v1.docx');
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Opening template...'),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Merging...'),
+      duration: Duration(seconds: 1),
+    ));
+
+
     final docx = await DocxTemplate.fromBytes(await file.readAsBytes());
     try {
       Content c = Content();
@@ -1054,10 +1117,10 @@ class MergrPenyediaScreen extends StatelessWidget {
       // final String filePath = '$dirPath';
       final of = new File('$docPath' +
           'Pictures/generated Mergr Pernyataan ${data1['aNamaBadanUsaha']}.docx');
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        await Permission.storage.request();
-      }
+      // var status = await Permission.storage.status;
+      // if (!status.isGranted) {
+      //   await Permission.storage.request();
+      // }
       await of.writeAsBytes(d);
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content:
@@ -1072,9 +1135,19 @@ class MergrPenyediaScreen extends StatelessWidget {
   void genDocxPersonelV2(BuildContext context, String q1) async {
     final docPath = await _localDocPath;
 
+    var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text('Dokumen sedang di proses...'),
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Loading database...'),
+      duration: Duration(seconds: 1),
     ));
 
     // **** data1
@@ -1121,7 +1194,19 @@ class MergrPenyediaScreen extends StatelessWidget {
     // File file = File(result.files.single.path);
     // print(file.absolute);
 
+    
+
     File file = File('$docPath' + 'Pictures/mDocPersonel_v1.docx');
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Opening template...'),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Merging...'),
+      duration: Duration(seconds: 1),
+    ));
 
     final docx = await DocxTemplate.fromBytes(await file.readAsBytes());
     try {
@@ -1169,12 +1254,12 @@ class MergrPenyediaScreen extends StatelessWidget {
       // final String dirPath = extDir.path.toString().substring(0, 20);
       // await Directory(dirPath).create(recursive: true);
       // final String filePath = '$dirPath';
+
+
+
       final of = new File('$docPath' +
           'Pictures/generated Mergr Personel ${data1['aNamaBadanUsaha']}.docx');
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        await Permission.storage.request();
-      }
+      
       await of.writeAsBytes(d);
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content:
@@ -1189,9 +1274,19 @@ class MergrPenyediaScreen extends StatelessWidget {
   void genDocxReferensiV2(BuildContext context, String q1) async {
     final docPath = await _localDocPath;
 
+   var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text('Dokumen sedang di proses...'),
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Loading database...'),
+      duration: Duration(seconds: 1),
     ));
 
     // **** data1
@@ -1239,6 +1334,16 @@ class MergrPenyediaScreen extends StatelessWidget {
     // // print(file.absolute);
 
     File file = File('$docPath' + 'Pictures/mDocReferensi_v1.docx');
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Opening template...'),
+      duration: Duration(seconds: 1),
+    ));
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Merging...'),
+      duration: Duration(seconds: 1),
+    ));
 
     final docx = await DocxTemplate.fromBytes(await file.readAsBytes());
     try {
@@ -1304,10 +1409,10 @@ class MergrPenyediaScreen extends StatelessWidget {
       // final String filePath = '$dirPath';
       final of = new File('$docPath' +
           'Pictures/generated Mergr Referensi ${data1['aNamaBadanUsaha']}.docx');
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        await Permission.storage.request();
-      }
+      // var status = await Permission.storage.status;
+      // if (!status.isGranted) {
+      //   await Permission.storage.request();
+      // }
       await of.writeAsBytes(d);
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content:

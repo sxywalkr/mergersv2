@@ -447,3 +447,12 @@ flutter build appbundle
 
 flutter build apk --split-per-abi
 
+flutter build apk --split-per-abi --debug
+flutter build apk --split-per-abi --profile
+flutter build apk --split-per-abi --release
+
+?? Optional 
+flutter pub cache repair
+
+// use this
+flutter build apk --no-shrink

@@ -156,19 +156,19 @@ class _SignInScreenState extends State<SignInScreen> {
                               .pushReplacementNamed(Routes.register);
                         },
                       ),
-                Center(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 70,
-                    ),
-                    Text(
-                      Provider.of<Flavor>(context).toString(),
-                      style: Theme.of(context).textTheme.body2,
-                    ),
-                  ],
-                )),
+                // Center(
+                //     child: Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: <Widget>[
+                //     SizedBox(
+                //       height: 70,
+                //     ),
+                //     Text(
+                //       Provider.of<Flavor>(context).toString(),
+                //       style: Theme.of(context).textTheme.body2,
+                //     ),
+                //   ],
+                // )),
               ],
             ),
           ),
